@@ -7,7 +7,7 @@ elif [ "$command" = "run_generator" ]; then
     docker run --rm -v "$DATA_DIR":/data generator
 elif [ "$command" = "create_local_data" ]; then
     mkdir -p local_data
-    python generator/generate.py local_data
+    python3 generator/generate.py local_data
 elif [ "$command" = "build_reporter" ]; then
     docker build -t reporter reporter
 elif [ "$command" = "run_reporter" ]; then
