@@ -1,6 +1,6 @@
 DATA_DIR=$(pwd)/data
 command=$1
-if[ "$command" = "build_generator" ]; then
+if [ "$command" = "build_generator" ]; then
     docker build -t generator generator
 elif [ "$command" = "run_generator" ]; then
     mkdir -p data
@@ -22,7 +22,7 @@ elif [ "$command" = "clear_data" ]; then
 elif [ "$command" = "inside_generator" ]; then
     mkdir -p data
     docker run --rm -v "$DATA_DIR":/data generator ls -la /data
-elif [ "$command" = "inside_generator" ]; then
+elif [ "$command" = "inside_reporter" ]; then
     mkdir -p data
     docker run --rm -v "$DATA_DIR":/data reporter ls -la /data 
 else
